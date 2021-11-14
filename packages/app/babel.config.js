@@ -18,6 +18,10 @@ module.exports = {
             require.resolve(`react-native/${name}`, {
               paths: [path.join(__dirname, './')],
             }),
+          '^@react-navigation/(.+)': ([, name]) =>
+            require.resolve(`@react-navigation/${name}`, {
+              paths: [path.join(__dirname, './')],
+            }),
         },
         extensions: [
           '.ios.js',
